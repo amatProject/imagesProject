@@ -84,7 +84,7 @@ def load_cifar10_data_into_CSV(directory):
     add_cifar_to_CSV(dfdict)
 
 def load_cifar100_data_into_CSV(directory,selected_classes):
-    selected_classes.sort(reverse=True)
+    # selected_classes.sort()
     images = []
     coarse_labels = []
     final_labels = []

@@ -3,7 +3,7 @@ import os
 import visualize_DB,extract_cifar,create_data,split_and_csv,ruin_data
 
 
-selected_classes = [1, 2, 4, 14, 17]
+# selected_classes = [1, 2, 4, 14, 17]
 # extract_cifar.load_all_data(r'C:\amatProject',selected_classes)
 
 # create_data.create_labels_json()
