@@ -24,7 +24,7 @@ def load_labels()->List:
         return  classes_names
 
 def predict(image_path:str,model)->List:
-    labels=load_labels()
+    #prepare image to predict
     image = Image.open(image_path)
     image = np.asarray(image)
     image = image.astype('float32')
