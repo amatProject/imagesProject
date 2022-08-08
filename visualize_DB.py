@@ -21,11 +21,10 @@ def image_examples():
     help_list = df[df['labels'].isin([1])].head()['image']
     fig= plt.figure(figsize=(15,10))
     images=list()
-    rows = 15
+    rows = 5
     columns = 5
     with open(r'../labels_names.json', 'r') as f:
         classes_names = json.load(f)
-    print(classes_names)
     for j in classes_names:
         help_list = df[df['labels'].isin([int(j)])].head()['image']
         for i in help_list:

@@ -14,14 +14,13 @@ def my_load_model():
 
 def load_json(file:str)->List:
     with open(file, 'r') as f:
-        list = json.load(f)
-        print(type(list))#load classes names
+        list = json.load(f) #load classes names
         return list
 
-def load_labels()->List:
-    with open(params.labels_json, 'r') as f:
-        classes_names = json.load(f) #load classes names
-        return  classes_names
+# def load_labels()->List:
+#     with open(params.labels_json, 'r') as f:
+#         classes_names = json.load(f) #load classes names
+#         return  classes_names
 
 def predict(image_path:str,model)->List:
     #prepare image to predict
@@ -45,8 +44,7 @@ def predict_pro(image_path:str,model)->str:
     labels = load_json(params.labels_json)
     threshes = load_json(params.thresh_json)
     image_pred_prob = predict(image_path,model)
-    print(f"max: {np.mean(image_pred_prob)},\nargmax: {np.argmax(image_pred_prob)}\nmaxPro: {np.max(image_pred_prob)}\nthr: {threshes}")
-
+    #print(f"max: {np.mean(image_pred_prob)},\nargmax: {np.argmax(image_pred_prob)}\nmaxPro: {np.max(image_pred_prob)}\nthr: {threshes}")
     if np.max(image_pred_prob) >= threshes[str(np.argmax(image_pred_prob))]:
          ind=labels[str(np.argmax(image_pred_prob))]
     else:ind='none'

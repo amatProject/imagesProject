@@ -54,7 +54,7 @@ def add_cifar_to_CSV(df):
 def save_images(images,names)->List:
     images_path = []
     directory_path = params.images_directory
-    funcs.create_dir(directory_path)
+    funcs.create_dir(directory_path)# create dir if doesnt exist
     images = np.reshape(images, (len(names), 3, 32, 32))
     for image,image_name in zip(images,names):
         fixed_image = np.transpose(image, (1, 2, 0))
@@ -114,9 +114,9 @@ def prepare_files_for_cifar():
     except:
         print('was not')
     funcs.create_dir(params.images_directory)
-    path = params.cifarCSV
+    CSVpath = params.cifarCSV
     df_labels = pd.DataFrame(columns=['image', 'labels', 'final_labels'])
-    df_labels.to_csv(path, mode='a', index=False)
+    df_labels.to_csv(CSVpath, mode='a', index=False)
 
 
 def load_all_data(path,selected_classes):#the function gets the path where the cifar10 and the cifar100 are stored

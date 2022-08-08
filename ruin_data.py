@@ -7,7 +7,6 @@ import create_data
 
 def ruin_data(train_csv_path:str):
     df = pd.read_csv(train_csv_path)
-    print(df)
     labels=df['labels']
     shuffle(labels[:len(labels)//10])#shuffle some labels
     df['labels']=labels
