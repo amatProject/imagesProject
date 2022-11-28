@@ -1,5 +1,5 @@
 # imagesProject
-recognizing images project for amat
+classifing images project for amat
 
 our goal:
 
