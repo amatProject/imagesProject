@@ -226,7 +226,7 @@ class Run(object):
 
         self.gallery.setWindowFlags(self.gallery.windowFlags() | Qt.WindowSystemMenuHint | Qt.WindowMinMaxButtonsHint)
 
-        self.gallery.setWindowTitle("faigyb2002's great app")
+        self.gallery.setWindowTitle("let's classify!")
 
     def run(self):
         self.gallery.show()
